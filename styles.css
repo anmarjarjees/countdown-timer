@@ -1,0 +1,174 @@
+/* Base Styles - Apply to the whole page (very simple and short brief comments) */
+* {
+    box-sizing: border-box;
+    /* 
+    using "border-box" to ensure that padding and borders are included 
+    in the element's total width and height.
+    */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    height: 100vh;
+    /* 
+    height: 100vh; 
+    > making the element's height equal to 100% of the viewport height 
+    > viewport is the visible area of the browser window)
+    > vh stands for viewport height units
+
+    IMPORTANT NOTE:
+    Using this rule combined with display: flex; and align-items: center;
+    will help to center an element vertically within the viewport :-)
+
+    Example: Applying these properties together:
+    display: flex;
+    height: 100vh;
+    align-items: center; => Centers vertically 
+    justify-content: center; => Centers horizontally 
+
+    Link: https://developer.mozilla.org/en-US/docs/Web/CSS/height
+    Link: https://developer.mozilla.org/en-US/docs/Web/CSS/length#vh_and_vw_units
+    */
+    display: flex;
+    /* 
+    display: flex; 
+    makes this container "body" a flexbox, 
+    allowing easy alignment and distribution of its child elements (both horizontally and vertically)
+    */
+    align-items: center;
+    justify-content: center;
+    background-color: #02265f;
+}
+
+/* Main container for the timer app */
+.timer-app {
+    background-color: #bed0ed;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 5px solid #fff;
+}
+
+/* App title */
+.timer-app h1 {
+    font-size: 1.8rem;
+    /* 
+    - rem and em are relative units
+    - rem (root em) is relative to the root element's font size (usually <html>), 
+    which is typically set to 16px by default in most browsers
+    - em is relative to the font size of its parent element
+
+    "rem" => root em
+    > Since rem is based on the root font size, 
+    it's more predictable and keeps your layout consistent
+    > For layout dimensions like padding, margins, and widths, rem is generally preferred for better maintainability and scalability
+
+    Link: 
+    Link: https://developer.mozilla.org/en-US/docs/Web/CSS/length#rem
+    Link: https://developer.mozilla.org/en-US/docs/Web/CSS/length#em
+    */
+    margin-bottom: 1.5rem;
+    color: #054991;
+    text-transform: uppercase;
+}
+
+/* Input section styling */
+/* Adjust the input and select to align better with the button */
+/* Input section styling */
+.input-section {
+    display: flex;
+    /* Use flexbox to align input fields and button */
+    align-items: center;
+    /* Vertically center the items within the flex container */
+    justify-content: center;
+    /* Horizontally center the items */
+    margin-bottom: 2rem;
+    /* Add spacing between the input section and the timer display */
+}
+
+.input-section label {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    /* Space between the label and input */
+}
+
+/* Input field styling */
+.input-section input {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-right: 0.5rem;
+    width: 80px;
+    /* Slightly narrower for the input field */
+}
+
+/* Dropdown (select element) styling */
+/* Dropdown (select element) styling */
+.input-section select {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 0.5rem;
+    width: auto;
+    /* Set width to auto to fit content */
+    min-width: 120px;
+    /* Set a minimum width to ensure it's wide enough */
+    text-align: center;
+    /* Centers text inside the dropdown */
+}
+
+/* Centering text inside the options */
+.input-section select option {
+    text-align: center;
+    /* Centers text inside the dropdown options */
+}
+
+.input-section input:focus,
+.input-section select:focus {
+    outline: none;
+    border-color: #007bff;
+    /* Change border color on focus */
+}
+
+/* Start button styling */
+#startButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    /* 
+    transition: background-color 0.4s ease;
+    - background-color => The final target color
+    - 0.4s => The duration of the transition which is 0.4 seconds
+    - ease => The timing function of the transition
+    (The ease function starts slow, speeds up, and then slows down again)
+    
+    Link: https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+    */
+    display: inline-block;
+    /* Ensures the button sits nicely in line with inputs */
+}
+
+#startButton:hover {
+    background-color: #0056b3;
+    /* Change background color on hover */
+}
+
+/* Countdown display section */
+.countdown-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #054991;
+}
